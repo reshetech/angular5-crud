@@ -1,0 +1,9 @@
+<h1>The current item</h1>
+<ul>
+	<li>Model: {{item.model}}</li>
+	<li>Price: {{item.price}}</li>
+	<li *ngIf="item.image.length > 0"><img [src]="'http://localhost'+item.image" width="100" height="auto"></li>
+</ul>
+
+<a [routerLink]="['/edit-listing',item.unique_id]">Edit</a>
+<a (click)="onDelete()">Delete</a>

@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+.alert p{
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.alert.alert-success p{
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}

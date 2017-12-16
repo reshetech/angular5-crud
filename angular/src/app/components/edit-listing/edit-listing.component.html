@@ -1,0 +1,21 @@
+<div class="container">
+	<h1>Edit The Car Model {{carModel.model}}</h1>
+	<form (ngSubmit)="onSubmit(carModelForm)" #carModelForm="ngForm">
+		<label>Model</label>
+		<input type="text" name="model" [(ngModel)]="carModel.model" #trackName="ngModel" required>
+		<p class="alert" *ngIf="!trackName.valid && trackName.touched">The name is required</p>
+
+		<br />
+		<label>Price</label>
+		<input type="text" name="price" [(ngModel)]="carModel.price" #trackPrice="ngModel" required>
+
+		<br />
+		<label>Image</label>
+		<input type="file" name="image" [(ngModel)]="image" (change)="fileChange($event)" accept=".png, .jpg">
+		<img [src]="'http://localhost/'+imageDisplay" *ngIf="imageDisplay.length > 0" height="150" width="auto">
+
+
+		<br />
+		<input type="submit" value="Save" [disabled]="!carModelForm.form.valid">
+	</form>
+</div>
