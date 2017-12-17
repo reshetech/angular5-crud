@@ -42,28 +42,27 @@ export class EditListingComponent implements OnInit {
 		this.activatedRoute
 			.params
 			.subscribe(params => {
-				this.id = params['id'] || '';
-				this.ls.getById(this.id)
-					.subscribe(
-					(response: Response) => {
-						let data  = response.json();
-						if(data !== null){
-							this.carModel.model = data.model;
-							this.carModel.price = data.price;
+			this.id = params['id'] || '';
+			this.ls.getById(this.id)
+				.subscribe(
+				(response: Response) => {
+					let data  = response.json();
+					if(data !== null){
+						this.carModel.model = data.model;
+						this.carModel.price = data.price;
 
-							this.image          = '';
-							this.imageDisplay   = data.image;
+						this.image          = '';
+						this.imageDisplay   = data.image;
 
-							this.uniqueId       = data.unique_id;
-						} else {
-							console.log("No data returned from the backend");
-						}
-					},
-					(error)    => console.log(error)
-				);
+						this.uniqueId       = data.unique_id;
+					} else {
+						console.log("No data returned from the backend");
+					}
+				},
+				(error)    => console.log(error)
+			);
 		}
 	}
-
 
 	submitted = false;
 

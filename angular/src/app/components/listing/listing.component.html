@@ -1,9 +1,14 @@
 <h1>The current item</h1>
-<ul>
-	<li>Model: {{item.model}}</li>
-	<li>Price: {{item.price}}</li>
-	<li *ngIf="item.image.length > 0"><img [src]="'http://localhost'+item.image" width="100" height="auto"></li>
+
+<ul class="list-group">
+	<li class="list-group-item">Model: {{item.model}}</li>
+	<li class="list-group-item">Price: {{item.price}}</li>
+	<li *ngIf="item.image.length > 0" class="list-group-item">
+		<img [src]="'http://localhost'+item.image" width="100" height="auto" class="img-thumbnail">
+	</li>
 </ul>
 
-<a [routerLink]="['/edit-listing',item.unique_id]">Edit</a>
-<a (click)="onDelete()">Delete</a>
+<p>&nbsp;</p>
+
+<a [routerLink]="['/edit-listing',item.unique_id]" class="btn btn-primary">Edit</a>
+<button (click)="onDelete()" class="btn btn-danger">Delete</button>

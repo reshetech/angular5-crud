@@ -1,6 +1,6 @@
 <h1>The list</h1>
-<ul>
-	<li *ngFor="let item of listings">
+<ul class="list-group">
+	<li *ngFor="let item of listings" class="list-group-item">
 		<a [routerLink]="['/listing/' + item.unique_id]">{{item.model}} {{item.price}}</a>
 	</li>
 </ul>

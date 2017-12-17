@@ -1,8 +1,12 @@
-<nav class="navbar navbar-inverse">
-	<div class="container">
-		<a [routerLink]="['/']">Home</a>
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-header pull-left">
+		<a class="navbar-brand" [routerLink]="['/']">HelloCrud</a>
 		<a [routerLink]="['/listings']">Listings</a>
 		<a [routerLink]="['/add-listing']">Add</a>
 	</div>
-</nav>
-<p>&nbsp;</p>
+	<div class="navbar-header pull-right">
+		<button type="button" class="btn btn-default navbar-btn">Login</button>
+		<button type="button" class="btn btn-default navbar-btn">Logout</button>
+	</div>
+</div>
+

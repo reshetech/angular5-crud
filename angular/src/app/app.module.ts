@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { ListingsService } from './services/listings.service';
@@ -37,6 +38,7 @@ const appRoutes: Routes = [
 	BrowserModule,
 	FormsModule,
 	HttpModule,
+	NgbModule.forRoot()
 	FlashMessagesModule.forRoot(),
 	RouterModule.forRoot(appRoutes)
   ],
